@@ -32,11 +32,36 @@ export const Route = createRootRoute({
       { title: "Nova Rise — Zimbabwe's Premier Cleaning & Placement Company" },
       { name: "description", content: "Professional deep cleaning, certified Maid Training Academy, and Zimbabwe's first digital domestic worker placement platform." },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "geo.region", content: "ZW" },
+      { name: "geo.placename", content: "Harare" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "stylesheet", href: appCss },
+    ],
+    scripts: [
       {
-        rel: "stylesheet",
-        href: appCss,
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Nova Rise Private Limited",
+          description: "Zimbabwe's premier professional cleaning services, maid training academy, and domestic worker placement platform.",
+          url: "https://novarisezw.co.zw",
+          telephone: "+263000000000",
+          email: "info@novarisezw.co.zw",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Central Business District",
+            addressLocality: "Harare",
+            addressCountry: "ZW",
+          },
+          geo: { "@type": "GeoCoordinates", latitude: -17.8292, longitude: 31.0522 },
+          openingHours: "Mo-Fr 08:00-17:00",
+          priceRange: "$$",
+          sameAs: [],
+        }),
       },
     ],
   }),
@@ -52,6 +77,27 @@ function RootShell({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        <a
+          href="#main"
+          style={{
+            position: "absolute",
+            top: "-100%",
+            left: "1rem",
+            background: "var(--gold)",
+            color: "var(--navy)",
+            padding: "0.5rem 1rem",
+            fontFamily: "var(--font-sans)",
+            fontWeight: 600,
+            fontSize: "0.85rem",
+            zIndex: 99999,
+            borderRadius: 2,
+            textDecoration: "none",
+          }}
+          onFocus={(e) => (e.currentTarget.style.top = "1rem")}
+          onBlur={(e) => (e.currentTarget.style.top = "-100%")}
+        >
+          Skip to content
+        </a>
         {children}
         <Scripts />
       </body>

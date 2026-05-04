@@ -86,6 +86,55 @@ export default function PlatformSection() {
           </div>
         </div>
 
+        {/* Maid Profile Previews */}
+        <div style={{ marginBottom: "4rem" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem", marginBottom: "1.5rem" }}>
+            <h3 className="font-display" style={{ fontWeight: 600, fontSize: "1.5rem", color: "var(--navy)" }}>Sample Worker Profiles</h3>
+            <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.78rem", color: "color-mix(in oklab, var(--navy) 45%, transparent)", fontStyle: "italic" }}>Full details unlocked after employer registration</span>
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "1.25rem" }}>
+            {[
+              { initials: "TM", name: "Tendai M.", province: "Harare", exp: "4 yrs", level: "Level 2", skills: ["Deep Cleaning", "Childcare", "Cooking"], rating: 4.9, reviews: 12, available: true, color: "#1A2F5A" },
+              { initials: "RN", name: "Rudo N.", province: "Harare", exp: "2 yrs", level: "Level 2", skills: ["Laundry & Ironing", "Cleaning", "Kitchen"], rating: 4.8, reviews: 8, available: true, color: "#2C5F3F" },
+              { initials: "CK", name: "Chipo K.", province: "Bulawayo", exp: "6 yrs", level: "Level 2", skills: ["Elderly Care", "Cooking", "First Aid"], rating: 5.0, reviews: 21, available: false, color: "#7A4A1E" },
+            ].map((p) => (
+              <div key={p.name} style={{ background: "white", border: "1px solid var(--warm-line)", borderRadius: 4, overflow: "hidden" }}>
+                <div style={{ padding: "1.25rem 1.25rem 1rem", background: "var(--warm)", borderBottom: "1px solid var(--warm-line)", display: "flex", alignItems: "center", gap: "0.85rem" }}>
+                  <div style={{ width: 46, height: 46, borderRadius: "50%", background: `color-mix(in oklab, ${p.color} 14%, transparent)`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <span className="font-display" style={{ fontWeight: 700, fontSize: "0.95rem", color: p.color }}>{p.initials}</span>
+                  </div>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                      <span style={{ fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: "0.92rem", color: "var(--navy)" }}>{p.name}</span>
+                      <span style={{ fontSize: "0.62rem", fontFamily: "var(--font-sans)", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", padding: "2px 7px", borderRadius: 2, background: p.available ? "color-mix(in oklab, #25D366 15%, transparent)" : "color-mix(in oklab, var(--navy) 8%, transparent)", color: p.available ? "#187A3A" : "color-mix(in oklab, var(--navy) 40%, transparent)" }}>
+                        {p.available ? "Available" : "Placed"}
+                      </span>
+                    </div>
+                    <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.73rem", color: "color-mix(in oklab, var(--navy) 50%, transparent)", marginTop: 2 }}>{p.province} · {p.exp}</div>
+                  </div>
+                </div>
+                <div style={{ padding: "1rem 1.25rem" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", marginBottom: "0.7rem" }}>
+                    <svg width={12} height={12} viewBox="0 0 24 24" fill="var(--gold)"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" /></svg>
+                    <span style={{ fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: "0.8rem", color: "var(--navy)" }}>{p.rating}</span>
+                    <span style={{ fontFamily: "var(--font-sans)", fontSize: "0.72rem", color: "color-mix(in oklab, var(--navy) 45%, transparent)" }}>({p.reviews})</span>
+                    <span style={{ marginLeft: "auto", fontFamily: "var(--font-sans)", fontSize: "0.67rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--gold)" }}>{p.level} ✓</span>
+                  </div>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.35rem", marginBottom: "0.9rem" }}>
+                    {p.skills.map((s) => (
+                      <span key={s} style={{ fontFamily: "var(--font-sans)", fontSize: "0.7rem", fontWeight: 500, padding: "3px 8px", background: "var(--warm)", border: "1px solid var(--warm-line)", borderRadius: 2, color: "color-mix(in oklab, var(--navy) 60%, transparent)" }}>{s}</span>
+                    ))}
+                  </div>
+                  <button onClick={goContact} disabled={!p.available}
+                    style={{ width: "100%", padding: "0.6rem", fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: "0.76rem", letterSpacing: "0.06em", textTransform: "uppercase", background: p.available ? "var(--navy)" : "color-mix(in oklab, var(--navy) 12%, transparent)", color: p.available ? "var(--warm)" : "color-mix(in oklab, var(--navy) 35%, transparent)", border: "none", borderRadius: 2, cursor: p.available ? "pointer" : "not-allowed" }}>
+                    {p.available ? "Register to Contact →" : "Currently Placed"}
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div>
           <h3 className="font-display" style={{ fontWeight: 600, fontSize: "1.5rem", color: "var(--navy)", marginBottom: "1.25rem" }}>Platform Fee Structure</h3>
           <div className="overflow-x-auto">

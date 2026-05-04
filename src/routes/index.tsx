@@ -1,17 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 import Navbar from "@/components/nova/Navbar";
+import ScrollProgressBar from "@/components/nova/ScrollProgressBar";
 import HeroSection from "@/components/nova/HeroSection";
 import StatsBar from "@/components/nova/StatsBar";
+import ClientLogoBar from "@/components/nova/ClientLogoBar";
 import ServicesSection from "@/components/nova/ServicesSection";
 import AcademySection from "@/components/nova/AcademySection";
 import PlatformSection from "@/components/nova/PlatformSection";
+import HowItWorksSection from "@/components/nova/HowItWorksSection";
 import AboutSection from "@/components/nova/AboutSection";
+import TestimonialsSection from "@/components/nova/TestimonialsSection";
 import PricingSection from "@/components/nova/PricingSection";
+import FAQSection from "@/components/nova/FAQSection";
 import ContactSection from "@/components/nova/ContactSection";
 import Footer from "@/components/nova/Footer";
+import WhatsAppFloat from "@/components/nova/WhatsAppFloat";
 import { Toaster } from "@/components/ui/sonner";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/")(  {
   component: Index,
   head: () => ({
     meta: [
@@ -35,18 +41,24 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="min-h-screen">
+      <ScrollProgressBar />
       <Navbar />
-      <main>
+      <main id="main">
         <HeroSection />
         <StatsBar />
+        <ClientLogoBar />
         <ServicesSection />
         <AcademySection />
         <PlatformSection />
+        <HowItWorksSection />
         <AboutSection />
+        <TestimonialsSection />
         <PricingSection />
+        <FAQSection />
         <ContactSection />
       </main>
       <Footer />
+      <WhatsAppFloat />
       <Toaster position="top-right" richColors />
     </div>
   );
