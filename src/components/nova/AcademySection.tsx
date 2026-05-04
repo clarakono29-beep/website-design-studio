@@ -16,10 +16,10 @@ const modules = [
 ];
 
 const tiers = [
-  { label: "Self-Sponsored", price: "USD 180", note: "Full 10-week course" },
-  { label: "Employer-Sponsored", price: "USD 220", note: "Company pays for their maid" },
-  { label: "NGO / Government", price: "USD 120", note: "Min. 20 students per batch" },
-  { label: "Single Module", price: "USD 30", note: "Per module, individual" },
+  { label: "Self-Sponsored", price: "Contact for price", note: "Full 10-week course" },
+  { label: "Employer-Sponsored", price: "Contact for price", note: "Company pays for their maid" },
+  { label: "NGO / Government", price: "Contact for price", note: "Min. 20 students per batch" },
+  { label: "Single Module", price: "Contact for price", note: "Per module, individual" },
 ];
 
 export default function AcademySection() {
@@ -96,7 +96,7 @@ export default function AcademySection() {
                 borderRadius: 2,
               }}>
                 <div style={{ fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: "0.74rem", letterSpacing: "0.12em", textTransform: "uppercase", color: i === 0 ? "var(--navy)" : "var(--gold)", marginBottom: "0.5rem" }}>{t.label}</div>
-                <div className="font-display" style={{ fontWeight: 700, fontSize: "1.75rem", color: i === 0 ? "var(--navy)" : "var(--warm)", lineHeight: 1, marginBottom: "0.4rem" }}>{t.price}</div>
+                <div className="font-display" style={{ fontWeight: 700, fontSize: "1.1rem", color: i === 0 ? "var(--navy)" : "var(--warm)", lineHeight: 1.2, marginBottom: "0.4rem" }}>{t.price}</div>
                 <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.75rem", color: i === 0 ? "color-mix(in oklab, var(--navy) 70%, transparent)" : "color-mix(in oklab, var(--warm) 50%, transparent)" }}>{t.note}</div>
               </div>
             ))}

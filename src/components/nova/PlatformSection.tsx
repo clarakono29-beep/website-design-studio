@@ -19,12 +19,12 @@ const maidFeatures = [
   { icon: Smartphone, text: "USSD (*263*NOVA#) for feature phone users without data" },
 ];
 const revenueModel = [
-  { item: "Employer Registration", price: "USD 10", note: "One-time verified account" },
-  { item: "Placement Commission", price: "15%", note: "Of first month's agreed salary" },
-  { item: "Premium Maid Listing", price: "USD 5/mo", note: "Featured priority placement" },
-  { item: "Background Check", price: "USD 15", note: "ZRP clearance facilitation" },
-  { item: "Contract Templates", price: "USD 8", note: "Per download" },
-  { item: "Corporate Membership", price: "USD 120/yr", note: "5+ placements annually" },
+  { item: "Employer Registration", price: "Contact for price", note: "One-time verified account" },
+  { item: "Placement Commission", price: "Contact for price", note: "Of first month's agreed salary" },
+  { item: "Premium Maid Listing", price: "Contact for price", note: "Featured priority placement" },
+  { item: "Background Check", price: "Contact for price", note: "ZRP clearance facilitation" },
+  { item: "Contract Templates", price: "Contact for price", note: "Per download" },
+  { item: "Corporate Membership", price: "Contact for price", note: "5+ placements annually" },
 ];
 
 export default function PlatformSection() {
