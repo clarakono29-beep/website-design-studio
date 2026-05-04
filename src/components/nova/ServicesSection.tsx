@@ -3,14 +3,14 @@ import cleaningImg from "@/assets/nova-cleaning.jpg";
 import { useInView } from "@/hooks/useInView";
 
 const services = [
-  { icon: Building2, title: "Office Deep Cleaning", desc: "Floor-to-ceiling corporate cleaning: carpets, windows, kitchens, and ablution facilities. Scheduled nightly, weekly, or monthly.", price: "From USD 80" },
-  { icon: GraduationCap, title: "School & College Cleaning", desc: "Comprehensive cleaning of classrooms, labs, boarding facilities, and sports halls during school holidays or weekends.", price: "From USD 400" },
-  { icon: Stethoscope, title: "Hospital & Clinic Cleaning", desc: "Infection-control compliant cleaning using medical-grade disinfectants. Staff trained in IPC protocols.", price: "From USD 250/day" },
-  { icon: PartyPopper, title: "Wedding & Event Venues", desc: "Pre-event setup and post-event deep cleaning of ballrooms, garden venues, tents, and marquees.", price: "From USD 150" },
-  { icon: Hotel, title: "Hotels & Lodges", desc: "Room servicing, linen management, public area cleaning, and deep-cleaning of kitchens and pool facilities.", price: "Contract rates" },
-  { icon: Home, title: "Private Residential", desc: "One-off deep cleans: spring cleaning, post-renovation, move-in/move-out cleaning for households.", price: "From USD 60" },
-  { icon: Factory, title: "Industrial & Warehouses", desc: "High-pressure washing of factory floors, storage areas, machinery surrounds, and commercial kitchens.", price: "From USD 300" },
-  { icon: Landmark, title: "Government & Embassies", desc: "Tender-based provision of cleaning for government buildings, embassies, and parastatals via PRAZ.", price: "Tender-based" },
+  { icon: Building2, title: "Office Deep Cleaning", desc: "Floor-to-ceiling corporate cleaning: carpets, windows, kitchens, and ablution facilities. Scheduled nightly, weekly, or monthly." },
+  { icon: GraduationCap, title: "School & College Cleaning", desc: "Comprehensive cleaning of classrooms, labs, boarding facilities, and sports halls during school holidays or weekends." },
+  { icon: Stethoscope, title: "Hospital & Clinic Cleaning", desc: "Infection-control compliant cleaning using medical-grade disinfectants. Staff trained in IPC protocols." },
+  { icon: PartyPopper, title: "Wedding & Event Venues", desc: "Pre-event setup and post-event deep cleaning of ballrooms, garden venues, tents, and marquees." },
+  { icon: Hotel, title: "Hotels & Lodges", desc: "Room servicing, linen management, public area cleaning, and deep-cleaning of kitchens and pool facilities." },
+  { icon: Home, title: "Private Residential", desc: "One-off deep cleans: spring cleaning, post-renovation, move-in/move-out cleaning for households." },
+  { icon: Factory, title: "Industrial & Warehouses", desc: "High-pressure washing of factory floors, storage areas, machinery surrounds, and commercial kitchens." },
+  { icon: Landmark, title: "Government & Embassies", desc: "Tender-based provision of cleaning for government buildings, embassies, and parastatals via PRAZ." },
 ];
 
 export default function ServicesSection() {
@@ -49,7 +49,7 @@ export default function ServicesSection() {
                 </div>
                 <h3 className="font-display" style={{ fontWeight: 600, fontSize: "1rem", color: "var(--navy)", marginBottom: "0.5rem", lineHeight: 1.3 }}>{s.title}</h3>
                 <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.82rem", color: "color-mix(in oklab, var(--navy) 60%, transparent)", lineHeight: 1.6, marginBottom: "1rem" }}>{s.desc}</p>
-                <span style={{ fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: "0.78rem", color: "var(--gold)", letterSpacing: "0.05em" }}>{s.price}</span>
+                
                 <div className="mt-4 pt-4 flex flex-col gap-1.5" style={{ borderTop: "1px solid color-mix(in oklab, var(--navy) 10%, transparent)" }}>
                   <a href={`tel:+263772123456`} style={{ fontFamily: "var(--font-sans)", fontSize: "0.78rem", color: "var(--navy)", fontWeight: 500, textDecoration: "none" }}>
                     📞 +263 77 212 3456
