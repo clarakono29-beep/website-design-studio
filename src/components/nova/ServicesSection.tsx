@@ -42,7 +42,7 @@ export default function ServicesSection() {
           {services.map((s, i) => {
             const Icon = s.icon;
             return (
-              <div key={s.title} className="card-service p-6"
+              <div key={s.title} className="card-service p-6 flex flex-col"
                 style={{ opacity: inView ? 1 : 0, transform: inView ? "translateY(0)" : "translateY(30px)", transition: `all 0.6s ease ${i * 0.07}s` }}>
                 <div className="w-10 h-10 flex items-center justify-center mb-4" style={{ background: "color-mix(in oklab, var(--gold) 12%, transparent)", borderRadius: "4px" }}>
                   <Icon size={20} style={{ color: "var(--gold)" }} />
@@ -50,6 +50,14 @@ export default function ServicesSection() {
                 <h3 className="font-display" style={{ fontWeight: 600, fontSize: "1rem", color: "var(--navy)", marginBottom: "0.5rem", lineHeight: 1.3 }}>{s.title}</h3>
                 <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.82rem", color: "color-mix(in oklab, var(--navy) 60%, transparent)", lineHeight: 1.6, marginBottom: "1rem" }}>{s.desc}</p>
                 <span style={{ fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: "0.78rem", color: "var(--gold)", letterSpacing: "0.05em" }}>{s.price}</span>
+                <div className="mt-4 pt-4 flex flex-col gap-1.5" style={{ borderTop: "1px solid color-mix(in oklab, var(--navy) 10%, transparent)" }}>
+                  <a href={`tel:+263772123456`} style={{ fontFamily: "var(--font-sans)", fontSize: "0.78rem", color: "var(--navy)", fontWeight: 500, textDecoration: "none" }}>
+                    📞 +263 77 212 3456
+                  </a>
+                  <a href={`mailto:rates@novarise.co.zw?subject=Rates enquiry — ${encodeURIComponent(s.title)}`} style={{ fontFamily: "var(--font-sans)", fontSize: "0.78rem", color: "var(--gold)", fontWeight: 600, textDecoration: "none" }}>
+                    Contact for rates →
+                  </a>
+                </div>
               </div>
             );
           })}
