@@ -7,6 +7,7 @@ import ClientLogoBar from "@/components/nova/ClientLogoBar";
 import ServicesSection from "@/components/nova/ServicesSection";
 import AcademySection from "@/components/nova/AcademySection";
 import PlatformSection from "@/components/nova/PlatformSection";
+import MaidListingSection from "@/components/nova/MaidListingSection";
 import HowItWorksSection from "@/components/nova/HowItWorksSection";
 import AboutSection from "@/components/nova/AboutSection";
 import TestimonialsSection from "@/components/nova/TestimonialsSection";
@@ -50,6 +51,7 @@ function Index() {
         <ServicesSection />
         <AcademySection />
         <PlatformSection />
+        <MaidListingSection />
         <HowItWorksSection />
         <AboutSection />
         <TestimonialsSection />
