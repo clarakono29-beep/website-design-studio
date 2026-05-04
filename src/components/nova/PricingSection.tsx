@@ -2,13 +2,13 @@ import { CheckCircle, Tag } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
 
 const cleaningPrices = [
-  { service: "Standard Office Clean (up to 200 sqm)", range: "USD 80 – 150", note: "Monthly contract: 15% discount" },
-  { service: "Large Office / NGO (200–500 sqm)", range: "USD 150 – 350", note: "Quarterly contract: 20% discount" },
-  { service: "School Building Deep Clean", range: "USD 400 – 1,200", note: "Per building, seasonal" },
-  { service: "Hospital / Clinic (per day)", range: "USD 250 – 600", note: "Frequency contract available" },
-  { service: "Wedding / Event Venue", range: "USD 150 – 400", note: "Pre + post package available" },
-  { service: "Private Residential Deep Clean", range: "USD 60 – 180", note: "By room count / sqm" },
-  { service: "Industrial Warehouse", range: "USD 300 – 800", note: "Quotation-based" },
+  { service: "Standard Office Clean (up to 200 sqm)", range: "Contact for price", note: "Monthly contract: 15% discount" },
+  { service: "Large Office / NGO (200–500 sqm)", range: "Contact for price", note: "Quarterly contract: 20% discount" },
+  { service: "School Building Deep Clean", range: "Contact for price", note: "Per building, seasonal" },
+  { service: "Hospital / Clinic (per day)", range: "Contact for price", note: "Frequency contract available" },
+  { service: "Wedding / Event Venue", range: "Contact for price", note: "Pre + post package available" },
+  { service: "Private Residential Deep Clean", range: "Contact for price", note: "By room count / sqm" },
+  { service: "Industrial Warehouse", range: "Contact for price", note: "Quotation-based" },
 ];
 const highlights = [
   "All quotes issued within 24 hours of site inspection",
