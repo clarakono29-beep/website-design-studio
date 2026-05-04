@@ -51,10 +51,10 @@ export default function ServicesSection() {
                 <p style={{ fontFamily: "var(--font-sans)", fontSize: "0.82rem", color: "color-mix(in oklab, var(--navy) 60%, transparent)", lineHeight: 1.6, marginBottom: "1rem" }}>{s.desc}</p>
                 
                 <div className="mt-4 pt-4 flex flex-col gap-1.5" style={{ borderTop: "1px solid color-mix(in oklab, var(--navy) 10%, transparent)" }}>
-                  <a href={`tel:+263772123456`} style={{ fontFamily: "var(--font-sans)", fontSize: "0.78rem", color: "var(--navy)", fontWeight: 500, textDecoration: "none" }}>
-                    📞 +263 77 212 3456
+                  <a href={`tel:+263000000000`} style={{ fontFamily: "var(--font-sans)", fontSize: "0.78rem", color: "var(--navy)", fontWeight: 500, textDecoration: "none" }}>
+                    📞 +263 (0) 000 000
                   </a>
-                  <a href={`mailto:rates@novarise.co.zw?subject=Rates enquiry — ${encodeURIComponent(s.title)}`} style={{ fontFamily: "var(--font-sans)", fontSize: "0.78rem", color: "var(--gold)", fontWeight: 600, textDecoration: "none" }}>
+                  <a href={`mailto:info@novarisezw.co.zw?subject=Rates enquiry — ${encodeURIComponent(s.title)}`} style={{ fontFamily: "var(--font-sans)", fontSize: "0.78rem", color: "var(--gold)", fontWeight: 600, textDecoration: "none" }}>
                     Contact for rates →
                   </a>
                 </div>

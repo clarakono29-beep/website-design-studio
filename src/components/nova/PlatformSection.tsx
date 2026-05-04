@@ -1,4 +1,4 @@
-import { Search, Star, MessageSquare, ShieldCheck, Smartphone, MapPin, Bell, DollarSign, FileText, Users } from "lucide-react";
+import { Search, Star, MessageSquare, ShieldCheck, Smartphone, MapPin, Bell, DollarSign, FileText, Users, Hash } from "lucide-react";
 import platformImg from "@/assets/nova-platform.jpg";
 import { useInView } from "@/hooks/useInView";
 
@@ -16,7 +16,7 @@ const maidFeatures = [
   { icon: MapPin, text: "GPS-based job matching to nearby opportunities" },
   { icon: DollarSign, text: "In-app salary negotiation guidance and minimum wage alerts" },
   { icon: ShieldCheck, text: "Safety feature: emergency contact and SOS button" },
-  { icon: Smartphone, text: "USSD (*263*NOVA#) for feature phone users without data" },
+  { icon: Hash, text: "USSD (*263*NOVA#) for feature phone users without data" },
 ];
 const revenueModel = [
   { item: "Employer Registration", price: "Contact for price", note: "One-time verified account" },

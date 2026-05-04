@@ -15,7 +15,36 @@ const socials = [
 ];
 
 const map: Record<string, string> = {
-  "Office Deep Cleaning": "#services", "About the Academy": "#academy", "For Employers": "#platform", "About Nova Rise": "#about",
+  // Services section
+  "Office Deep Cleaning": "#services",
+  "School & College Cleaning": "#services",
+  "Hospital & Clinic Cleaning": "#services",
+  "Wedding & Event Venues": "#services",
+  "Private Residential": "#services",
+  "Industrial & Warehouses": "#services",
+  // Academy section
+  "About the Academy": "#academy",
+  "Training Curriculum": "#academy",
+  "Enrolment & Fees": "#academy",
+  "Certification": "#academy",
+  "Employer Sponsorship": "#academy",
+  "ZIMDEF Levy": "#academy",
+  // Platform section
+  "For Employers": "#platform",
+  "For Domestic Workers": "#platform",
+  "Register as Employer": "#platform",
+  "Create Maid Profile": "#platform",
+  "Fee Structure": "#platform",
+  "USSD Access": "#platform",
+  // Company section
+  "About Nova Rise": "#about",
+  "Our Values": "#about",
+  // Contact-linked
+  "Careers": "#contact",
+  "Press & Media": "#contact",
+  // No section yet — prevent scroll-to-top
+  "Privacy Policy": "",
+  "Terms of Service": "",
 };
 
 export default function Footer() {
@@ -50,7 +79,7 @@ export default function Footer() {
               <ul className="flex flex-col gap-2">
                 {links.map((link) => (
                   <li key={link}>
-                    <a href={map[link] ?? "#"} onClick={(e) => { if (map[link]) { e.preventDefault(); document.querySelector(map[link])?.scrollIntoView({ behavior: "smooth" }); } }}
+                    <a href={map[link] ? map[link] : undefined} onClick={(e) => { e.preventDefault(); if (map[link]) { document.querySelector(map[link])?.scrollIntoView({ behavior: "smooth" }); } }}
                       style={{ fontFamily: "var(--font-sans)", fontSize: "0.82rem", color: "color-mix(in oklab, var(--warm) 45%, transparent)", textDecoration: "none", display: "block", transition: "color 0.2s ease" }}
                       onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
                       onMouseLeave={(e) => (e.currentTarget.style.color = "color-mix(in oklab, var(--warm) 45%, transparent)")}>
@@ -71,6 +100,7 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             {socials.map(({ icon: Icon, label }) => (
               <a key={label} href="#" aria-label={label}
+                onClick={(e) => e.preventDefault()}
                 style={{ color: "color-mix(in oklab, var(--warm) 30%, transparent)", transition: "color 0.2s ease" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "color-mix(in oklab, var(--warm) 30%, transparent)")}>
