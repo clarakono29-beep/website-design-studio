@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
+import { CONTACT, telHref } from "@/lib/contact";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -104,9 +105,9 @@ export default function Navbar() {
             </div>
 
             <div className="hidden lg:flex items-center gap-4">
-              <a href="tel:+263000000000" className="flex items-center gap-2" style={{ fontFamily: "var(--font-sans)", fontSize: "0.78rem", color: "var(--gold)", textDecoration: "none", fontWeight: 500 }}>
+              <a href={telHref} className="flex items-center gap-2" style={{ fontFamily: "var(--font-sans)", fontSize: "0.78rem", color: "var(--gold)", textDecoration: "none", fontWeight: 500 }}>
                 <Phone size={14} />
-                <span>+263 (0) 000 000</span>
+                <span>{CONTACT.phoneDisplay}</span>
               </a>
               <button className="btn-gold" onClick={() => go("#contact")}>Get a Quote</button>
             </div>

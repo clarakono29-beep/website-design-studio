@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Linkedin, Youtube, Phone, Mail, MapPin } from "lucide-react";
+import { CONTACT, telHref, mailHref } from "@/lib/contact";
 
 const footerLinks: Record<string, string[]> = {
   Services: ["Office Deep Cleaning", "School & College Cleaning", "Hospital & Clinic Cleaning", "Wedding & Event Venues", "Private Residential", "Industrial & Warehouses"],
@@ -8,11 +9,19 @@ const footerLinks: Record<string, string[]> = {
 };
 
 const socials = [
-  { icon: Facebook, label: "Facebook" },
-  { icon: Instagram, label: "Instagram" },
-  { icon: Linkedin, label: "LinkedIn" },
-  { icon: Youtube, label: "YouTube" },
+  { icon: Facebook, label: "Facebook", href: CONTACT.social.facebook },
+  { icon: Instagram, label: "Instagram", href: CONTACT.social.instagram },
+  { icon: Linkedin, label: "LinkedIn", href: CONTACT.social.linkedin },
+  { icon: Youtube, label: "YouTube", href: CONTACT.social.youtube },
 ];
+
+const linkBase: React.CSSProperties = {
+  fontFamily: "var(--font-sans)",
+  fontSize: "0.78rem",
+  color: "color-mix(in oklab, var(--warm) 50%, transparent)",
+  textDecoration: "none",
+  transition: "color 0.2s ease",
+};
 
 const map: Record<string, string> = {
   // Services section
@@ -67,8 +76,8 @@ export default function Footer() {
             </p>
             <div className="font-display italic mb-4" style={{ fontSize: "0.95rem", color: "var(--gold)" }}>"Raising Standards. Transforming Lives."</div>
             <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-2"><Phone size={13} style={{ color: "var(--gold)" }} /><span style={{ fontFamily: "var(--font-sans)", fontSize: "0.78rem", color: "color-mix(in oklab, var(--warm) 50%, transparent)" }}>+263 (0) 000 000</span></div>
-              <div className="flex items-center gap-2"><Mail size={13} style={{ color: "var(--gold)" }} /><span style={{ fontFamily: "var(--font-sans)", fontSize: "0.78rem", color: "color-mix(in oklab, var(--warm) 50%, transparent)" }}>info@novarisezw.co.zw</span></div>
+              <div className="flex items-center gap-2"><Phone size={13} style={{ color: "var(--gold)" }} /><a href={telHref} style={linkBase} onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")} onMouseLeave={(e) => (e.currentTarget.style.color = "color-mix(in oklab, var(--warm) 50%, transparent)")}>{CONTACT.phoneDisplay}</a></div>
+              <div className="flex items-center gap-2"><Mail size={13} style={{ color: "var(--gold)" }} /><a href={mailHref} style={linkBase} onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")} onMouseLeave={(e) => (e.currentTarget.style.color = "color-mix(in oklab, var(--warm) 50%, transparent)")}>{CONTACT.email}</a></div>
               <div className="flex items-start gap-2"><MapPin size={13} style={{ color: "var(--gold)", marginTop: 2, flexShrink: 0 }} /><span style={{ fontFamily: "var(--font-sans)", fontSize: "0.78rem", color: "color-mix(in oklab, var(--warm) 50%, transparent)" }}>Harare CBD, Zimbabwe</span></div>
             </div>
           </div>
@@ -98,15 +107,21 @@ export default function Footer() {
             © {new Date().getFullYear()} Nova Rise Private Limited. All rights reserved. Registered in Zimbabwe.
           </p>
           <div className="flex items-center gap-4">
-            {socials.map(({ icon: Icon, label }) => (
-              <a key={label} href="#" aria-label={label}
-                onClick={(e) => e.preventDefault()}
-                style={{ color: "color-mix(in oklab, var(--warm) 30%, transparent)", transition: "color 0.2s ease" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "color-mix(in oklab, var(--warm) 30%, transparent)")}>
-                <Icon size={18} />
-              </a>
-            ))}
+            {socials.map(({ icon: Icon, label, href }) => {
+              const isPlaceholder = href === "#";
+              return (
+                <a key={label} href={isPlaceholder ? undefined : href}
+                  target={isPlaceholder ? undefined : "_blank"}
+                  rel={isPlaceholder ? undefined : "noopener noreferrer"}
+                  aria-label={label}
+                  onClick={isPlaceholder ? (e) => e.preventDefault() : undefined}
+                  style={{ color: "color-mix(in oklab, var(--warm) 30%, transparent)", transition: "color 0.2s ease", cursor: isPlaceholder ? "default" : "pointer" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "var(--gold)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "color-mix(in oklab, var(--warm) 30%, transparent)")}>
+                  <Icon size={18} />
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>

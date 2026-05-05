@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { whatsappHref } from "@/lib/contact";
 
 export default function WhatsAppFloat() {
   const [visible, setVisible] = useState(false);
@@ -9,8 +10,7 @@ export default function WhatsAppFloat() {
     return () => clearTimeout(t);
   }, []);
 
-  const waUrl =
-    "https://wa.me/263000000000?text=Hi%20Nova%20Rise%2C%20I%27d%20like%20to%20enquire%20about%20your%20services.";
+  const waUrl = whatsappHref("Hi Nova Rise, I'd like to enquire about your services.");
 
   return (
     <a
