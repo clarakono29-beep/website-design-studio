@@ -37,11 +37,14 @@ export default function PricingSection() {
               Value-based pricing — slightly above the informal market to justify quality, insurance, and certification, but positioned below large international firms. Penetration pricing applies in the first 6 months (10–15% introductory discount).
             </p>
           </div>
-          <div className="p-6 self-start" style={{ background: "var(--navy)", borderRadius: 2 }}>
-            <Tag size={20} style={{ color: "var(--gold)", marginBottom: "0.75rem" }} />
-            <div className="font-display" style={{ fontWeight: 700, fontSize: "1.1rem", color: "var(--warm)", marginBottom: "0.5rem" }}>Launch Offer</div>
+          <div className="p-7 self-start" style={{ background: "var(--navy)", borderRadius: 2, boxShadow: "0 18px 40px -20px color-mix(in oklab, var(--navy) 50%, transparent)" }}>
+            <div className="flex items-center gap-2 mb-3">
+              <Tag size={16} style={{ color: "var(--gold)" }} />
+              <span style={{ fontFamily: "var(--font-sans)", fontWeight: 500, fontSize: "0.68rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--gold)" }}>Launch Offer</span>
+            </div>
+            <div className="font-display" style={{ fontWeight: 700, fontSize: "1.4rem", color: "var(--warm)", lineHeight: 1.2, marginBottom: "0.6rem" }}>10–15% off everything</div>
             <div style={{ fontFamily: "var(--font-sans)", fontSize: "0.85rem", color: "color-mix(in oklab, var(--warm) 70%, transparent)", lineHeight: 1.6 }}>
-              10–15% introductory discount on all services during our first 6 months. Sign a monthly retainer and save an additional 15%.
+              Introductory discount during our first 6 months. Sign a monthly retainer and save an additional 15%.
             </div>
           </div>
         </div>
@@ -50,7 +53,7 @@ export default function PricingSection() {
           <table className="w-full" style={{ borderCollapse: "collapse" }}>
             <thead>
               <tr style={{ background: "var(--navy)" }}>
-                {["Service Type", "Price Range (USD)", "Notes"].map((h) => (
+                {["Service Type", "Pricing", "Notes"].map((h) => (
                   <th key={h} className="text-left py-4 px-5" style={{ fontFamily: "var(--font-sans)", fontWeight: 600, fontSize: "0.72rem", letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--gold)" }}>{h}</th>
                 ))}
               </tr>
@@ -59,7 +62,7 @@ export default function PricingSection() {
               {cleaningPrices.map((row, i) => (
                 <tr key={row.service} style={{ borderBottom: "1px solid var(--warm-line)", background: i % 2 === 0 ? "white" : "var(--warm)" }}>
                   <td className="py-4 px-5" style={{ fontFamily: "var(--font-sans)", fontWeight: 500, fontSize: "0.9rem", color: "var(--navy)" }}>{row.service}</td>
-                  <td className="py-4 px-5 font-display" style={{ fontWeight: 700, fontSize: "1rem", color: "var(--gold)", whiteSpace: "nowrap" }}>{row.range}</td>
+                  <td className="py-4 px-5 font-display" style={{ fontWeight: 600, fontSize: "0.92rem", color: "var(--gold)", whiteSpace: "nowrap", letterSpacing: "0.01em" }}>{row.range}</td>
                   <td className="py-4 px-5" style={{ fontFamily: "var(--font-sans)", fontSize: "0.82rem", color: "color-mix(in oklab, var(--navy) 55%, transparent)" }}>{row.note}</td>
                 </tr>
               ))}
